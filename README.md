@@ -1,4 +1,25 @@
 # Unity-2DPlayerControl-Script
+
+⭐使用建議:
+
+將player sprite與capsule collider分成兩個物件，組成群組，並將此程式套用於capsule collider上。程式的Animator及Player則參考player sprite之Animator及sprite
+
+此程式支援多項animator parameters，以便操控player sprite之animation
+
+*提供之parameters*
+
+float speed:橫軸速度
+
+float vertical_speed:縱軸速度
+
+bool climbing:是否黏在牆上
+
+bool jumping:是否正在跳躍
+
+trigger attacking:是否按下左鍵
+
+
+
 *以下為參數說明:*
 
 Acceleration:加速Vector的SmoothDamp之deltatime值(1/Acceleration)

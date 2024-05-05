@@ -10,7 +10,6 @@ public class PlayerControl : MonoBehaviour
     public Rigidbody2D Rigidbody;
     public Collider2D Collider;
     public Animator animator;
-    public Animator backpack;
     public GameObject player;
     public float accleration;
     public float acclination;
@@ -31,7 +30,6 @@ public class PlayerControl : MonoBehaviour
     public float jump_spare;
     public float walljump_strength;
 
-    private int back_state = -1;
     private float jump_try;
     private float time;
     private bool jumpdown;
@@ -223,7 +221,6 @@ public class PlayerControl : MonoBehaviour
             walljumping = false;
             walljump_available = false;
             animator.SetBool("climbing", false);
-            ungrounded = 0;
         }
 
         if ((jumping == true && !r_wall && !l_wall) || Rigidbody.velocity.y < 0)
@@ -297,12 +294,4 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void Backpack()
-    {
-        if(Input.GetKeyDown("e"))
-        {
-            back_state *= -1;
-            backpack.SetInteger("open",back_state);
-        }
-    }
 }

@@ -12,7 +12,6 @@ public class PlayerControl : MonoBehaviour
     public Animator animator;
     public Animator backpack;
     public GameObject player;
-    //public DialogueManager dialogueManager;
     public float accleration;
     public float acclination;
     public float max_speed;
@@ -59,17 +58,8 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!dialogueManager.talking)
-        {
-            Move();
-        }
-        else
-        {
-            Rigidbody.velocity = new Vector2(0, Rigidbody.velocity.y);
-        }
-        
+        Move();
         Checkcollision();
-        
         
     }
 
@@ -77,21 +67,13 @@ public class PlayerControl : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (!dialogueManager.talking)
-        {
-            Jump();
-            Walljump();
-            attack();
-            Backpack();
-        }
+        Jump();
+        Walljump();
+        attack();
+        Backpack();
+        
         Gatherinput();
         Lock_rotation();
-        
-        if (dialogueManager.talking)
-        {
-            animator.SetBool("climbing",false);
-            animator.SetFloat("speed", 0);
-        }
         
         animator.SetFloat("vertical_speed", Rigidbody.velocity.y);
         animator.SetBool("jumping", !grounded);
@@ -262,15 +244,15 @@ public class PlayerControl : MonoBehaviour
     private void Lock_rotation()
     {
 
-         if (Input.GetAxisRaw("Horizontal") == 1 && !dialogueManager.talking)
+         if (Input.GetAxisRaw("Horizontal") == 1)
          {
              quaternion = Quaternion.Euler(0, 0, angle*-1);
          }
-         else if (Input.GetAxisRaw("Horizontal") == -1 && !dialogueManager.talking)
+         else if (Input.GetAxisRaw("Horizontal") == -1)
          {
              quaternion = Quaternion.Euler(0, 0, angle*1);
          }
-         else if (Input.GetAxisRaw("Horizontal") == 0 || dialogueManager.talking)
+         else if (Input.GetAxisRaw("Horizontal") == 0)
          {
              quaternion = Quaternion.Euler(0, 0, 0);
          }

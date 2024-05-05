@@ -1,5 +1,6 @@
 # Unity-2DPlayerControl-Script
 *以下為參數說明:*
+
 Acceleration:加速Vector的SmoothDamp之deltatime值(1/Acceleration)
 
 Acclination:減速Vector的SmoothDamp之deltatime值(1/Acclination)

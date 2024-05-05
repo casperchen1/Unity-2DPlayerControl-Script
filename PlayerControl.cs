@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     public Animator animator;
     public Animator backpack;
     public GameObject player;
-    public DialogueManager dialogueManager;
+    //public DialogueManager dialogueManager;
     public float accleration;
     public float acclination;
     public float max_speed;

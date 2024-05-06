@@ -40,8 +40,8 @@ Falling_plunge:中斷跳躍時，立即將y速度設為-1*Falling_plunge
 
 Falling_acceleration:掉落時的RigidBody.gravityscale
 
-Coyote_time:離開地面後的Coyote_time秒(Time.deltaTime)內，允許跳躍
+Coyote_time:離開地面後的Coyote_time秒(使用Time.deltaTime)內，允許跳躍
 
-Jump_spare:若在落地前的Jump_spare秒(Time.deltaTime)內按下跳躍，允許跳躍
+Jump_spare:若在落地前的Jump_spare秒(使用Time.deltaTime)內按下跳躍，允許跳躍
 
-Walljump_strength:踢強跳時，速度設為(±Walljump_strength,walljump_strength)
+Walljump_strength:踢強跳時，RigidBody.velocity設為(±Walljump_strength,walljump_strength)

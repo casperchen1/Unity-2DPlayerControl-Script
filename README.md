@@ -6,6 +6,8 @@
 
 此程式支援多項animator parameters，以便操控player sprite之animation
 
+可於CheckCollision函示中調整地面與牆壁的tag，默認為Floor與Wall
+
 *提供之parameters*
 
 float speed:橫軸速度

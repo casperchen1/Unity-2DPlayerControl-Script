@@ -8,7 +8,7 @@
 
 可於CheckCollision函示中調整地面與牆壁的tag，默認為Floor與Wall
 
-*提供之parameters*
+*提供之animator parameters*
 
 float speed:橫軸速度
 
